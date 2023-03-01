@@ -1,5 +1,5 @@
 #更新refresh_token
-name: update refresh_token
+name: refresh_token
 
 on: 
   release:
