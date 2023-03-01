@@ -1,5 +1,5 @@
 #自动调用api保活，模仿人为开发版
-name: AutoApiSR
+name: Auto Api SR
 
 on: 
   release:
@@ -10,14 +10,14 @@ on:
   #  branches: 
   #    - master
   schedule:
-    - cron: '7 1,5,8 * * 1-5'
+    - cron: "0 9,13,16 * * 1-5"
   watch:
     types: [started]
    
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
+    
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -33,10 +33,11 @@ jobs:
         CONFIG_ID: ${{ secrets.CONFIG_ID }} # secrets_id 提供
         CONFIG_KEY: ${{ secrets.CONFIG_KEY }} # secrets_key 提供
       run: | 
+        cp 1.py 2.py
         echo $CONFIG_ID > configid.txt
         echo $CONFIG_KEY > configkey.txt
-        sed -i '10 r configid.txt' 1.py
-        sed -i '12 r configkey.txt' 1.py
+        sed -i '10 r configid.txt' 2.py
+        sed -i '12 r configkey.txt' 2.py
     - name: Test Api #Api调用
       run: | 
-        python 1.py
+        python 2.py
