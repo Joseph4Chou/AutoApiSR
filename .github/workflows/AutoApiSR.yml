@@ -1,5 +1,5 @@
 #自动调用api保活，模仿人为开发版
-name: Auto Api SR
+name: AutoApiSR
 
 on: 
   release:
