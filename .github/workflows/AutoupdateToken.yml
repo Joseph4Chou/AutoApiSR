@@ -1,5 +1,5 @@
 #更新refresh_token
-name: refresh_token
+name: update refresh_token
 
 on: 
   release:
@@ -10,14 +10,14 @@ on:
   #  branches: 
   #    - master
   schedule:
-    - cron: '55 0 * * *'
-  #watch:
-  #  types: [started]
+    - cron: "0 * * * *"
+  watch:
+    types: [started]
    
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -40,7 +40,6 @@ jobs:
         sed -i '12 r configkey.txt' update2.py
     - name: Update token #更新token
       run: | 
-        echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
         python update2.py
     - name: Delete secrets config #删除机密
       run: | 
