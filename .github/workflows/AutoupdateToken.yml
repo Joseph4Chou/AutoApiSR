@@ -22,9 +22,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Set up Python #安装python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v3
       with:
-        python-version: 3.9.20
+        python-version: "3.10"
     - name: Install requests #安装requests
       run: |
         pip install requests
