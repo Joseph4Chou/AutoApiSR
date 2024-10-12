@@ -6,6 +6,11 @@ import time
 import random
 
 
+# 预留client_id和client_secret插入
+
+
+
+
 path = sys.path[0]+r'/1.txt'
 num1 = 0
 
