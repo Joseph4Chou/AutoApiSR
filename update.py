@@ -5,6 +5,12 @@ import sys
 import time
 
 
+
+# 预留clien_id和client_secret插入
+
+
+
+
 path = sys.path[0]+r'/1.txt'
 
 
